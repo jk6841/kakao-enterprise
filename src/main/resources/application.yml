@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: kakao-enterprise
+  r2dbc:
+    url: r2dbc:mysql://localhost:33306/assignment?serverTimezone=Asia/Seoul
+    username: assignment
+    password: assignment
