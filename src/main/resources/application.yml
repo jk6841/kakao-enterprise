@@ -5,3 +5,17 @@ spring:
     url: r2dbc:mysql://localhost:33306/assignment?serverTimezone=Asia/Seoul
     username: assignment
     password: assignment
+    pool:
+      initial-size: 100
+      max-size: 100
+      enabled: true
+app:
+  dataload:
+    json:
+      path: './data.json'
+    batch:
+      size: 128
+logging:
+  level:
+    io.github.jk6841: DEBUG
+#    org.springframework.r2dbc: DEBUG
