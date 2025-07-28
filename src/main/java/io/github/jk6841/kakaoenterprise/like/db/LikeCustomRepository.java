@@ -15,7 +15,7 @@ import java.time.temporal.ChronoUnit;
 public class LikeCustomRepository {
     private static final String QUERY_TRENDING_SONGS = """
             select likes, s.id as id, title, artist, release_date from
-            ( select count(*) as likes, song_id from `like` where date between :from and :to group by song_id order by count(*) desc limit :size ) l 
+            ( select count(*) as likes, song_id from llike where date_time between :from and :to group by song_id order by count(*) desc limit :size ) l 
             left join 
             song s 
             on l.song_id = s.id
