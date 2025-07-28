@@ -32,6 +32,7 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     runtimeOnly("io.asyncer:r2dbc-mysql")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.2.3.Final:osx-aarch_64")
 }
 
 tasks.withType<Test> {
