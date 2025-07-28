@@ -1,3 +1,15 @@
+create table `like`
+(
+    id      bigint auto_increment primary key,
+    song_id bigint   null,
+    date    datetime null,
+    user_id int      null,
+);
+
+create index like_date_song_id_index
+    on `like` (date, song_id);
+
+
 create table song
 (
     id                             bigint auto_increment primary key,
