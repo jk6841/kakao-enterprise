@@ -43,3 +43,29 @@ paths:
                         releaseDate:
                           type: string
                           description: 발표일
+  /songs/{song-id}/likes:
+    put:
+      summary: 좋아요 증가 API
+      description: |
+        (song_id, user_id) 기준으로 멱등적으로 동작함
+      parameters:
+        - in: path
+          name: song-id
+          description: 노래 ID
+          required: true
+        - in: header
+          name: USER-ID
+          description: 회원 ID
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: object
+        404:
+          description: |
+            - 노래가 없음
+          content:
+            application/json:
+              schema:
+                type: object

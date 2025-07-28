@@ -1,13 +1,19 @@
-create table `like`
+create table llike
 (
-    id      bigint auto_increment primary key,
-    song_id bigint   null,
-    date    datetime null,
-    user_id int      null,
+    id        bigint auto_increment
+        primary key,
+    song_id   bigint   null,
+    date_time datetime null,
+    user_id   bigint   null,
+    constraint like_song_id_user_id_uindex
+        unique (song_id, user_id),
+    constraint llike_song_id_fk
+        foreign key (song_id) references song (id)
 );
 
-create index like_date_song_id_index
-    on `like` (date, song_id);
+create index like_date_time_song_id_index
+    on llike (date_time, song_id);
+
 
 
 create table song
