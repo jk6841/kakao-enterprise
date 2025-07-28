@@ -1,14 +1,13 @@
 package io.github.jk6841.kakaoenterprise.dataload;
 
 import io.github.jk6841.kakaoenterprise.dataload.file.FileLine;
-import io.github.jk6841.kakaoenterprise.song.SimilarSong;
-import io.github.jk6841.kakaoenterprise.song.Song;
+import io.github.jk6841.kakaoenterprise.common.song.SimilarSong;
+import io.github.jk6841.kakaoenterprise.common.song.Song;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class SongFactoryTest {
     private final SongFactory songFactory = new SongFactory();

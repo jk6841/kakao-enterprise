@@ -1,9 +1,9 @@
-package io.github.jk6841.kakaoenterprise.like;
+package io.github.jk6841.kakaoenterprise.api.like;
 
-import io.github.jk6841.kakaoenterprise.exception.NotFoundSongException;
-import io.github.jk6841.kakaoenterprise.like.api.dto.TrendingSongsResponse;
-import io.github.jk6841.kakaoenterprise.like.db.LikeCustomRepository;
-import io.github.jk6841.kakaoenterprise.like.db.LikeRepository;
+import io.github.jk6841.kakaoenterprise.api.exception.NotFoundSongException;
+import io.github.jk6841.kakaoenterprise.api.like.api.dto.TrendingSongsResponse;
+import io.github.jk6841.kakaoenterprise.api.like.db.LikeCustomRepository;
+import io.github.jk6841.kakaoenterprise.api.like.db.LikeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.DuplicateKeyException;

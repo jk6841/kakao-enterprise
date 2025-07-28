@@ -1,4 +1,4 @@
-package io.github.jk6841.kakaoenterprise.like.api.dto;
+package io.github.jk6841.kakaoenterprise.api.like.api.dto;
 
 import java.util.List;
 

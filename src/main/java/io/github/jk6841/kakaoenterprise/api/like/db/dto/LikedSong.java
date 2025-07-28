@@ -1,4 +1,4 @@
-package io.github.jk6841.kakaoenterprise.like.db.dto;
+package io.github.jk6841.kakaoenterprise.api.like.db.dto;
 
 public record LikedSong(
         Integer likes,
