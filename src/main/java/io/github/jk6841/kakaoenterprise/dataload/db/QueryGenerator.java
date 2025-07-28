@@ -2,7 +2,7 @@ package io.github.jk6841.kakaoenterprise.dataload.db;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.jk6841.kakaoenterprise.song.Song;
+import io.github.jk6841.kakaoenterprise.common.song.Song;
 import io.r2dbc.spi.Connection;
 import io.r2dbc.spi.Statement;
 import lombok.RequiredArgsConstructor;

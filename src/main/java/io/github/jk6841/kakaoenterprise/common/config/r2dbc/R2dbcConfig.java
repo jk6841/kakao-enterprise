@@ -1,4 +1,4 @@
-package io.github.jk6841.kakaoenterprise.config.r2dbc;
+package io.github.jk6841.kakaoenterprise.common.config.r2dbc;
 
 import io.r2dbc.spi.ConnectionFactory;
 import org.springframework.context.annotation.Bean;

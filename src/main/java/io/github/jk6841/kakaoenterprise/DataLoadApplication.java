@@ -10,6 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import reactor.core.scheduler.Scheduler;
 
 import java.time.Duration;
@@ -17,6 +18,7 @@ import java.time.Instant;
 
 @Slf4j
 @SpringBootApplication
+@ComponentScan(basePackages = {"io.github.jk6841.kakaoenterprise.dataload", "io.github.jk6841.kakaoenterprise.common"})
 public class DataLoadApplication implements ApplicationRunner {
     private final FileLineReader fileLineReader;
 
@@ -45,6 +47,7 @@ public class DataLoadApplication implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
         Instant start = Instant.now();
+        log.info("Starting.");
         fileLineReader.readLines()
                 .publishOn(objectScheduler)
                 .flatMap(songObjectService::convertFileLineToSong)

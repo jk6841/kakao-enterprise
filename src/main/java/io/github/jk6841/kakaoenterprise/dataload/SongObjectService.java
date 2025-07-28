@@ -1,7 +1,7 @@
 package io.github.jk6841.kakaoenterprise.dataload;
 
 import io.github.jk6841.kakaoenterprise.dataload.file.FileLineDeserializer;
-import io.github.jk6841.kakaoenterprise.song.Song;
+import io.github.jk6841.kakaoenterprise.common.song.Song;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;

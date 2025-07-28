@@ -1,6 +1,6 @@
 package io.github.jk6841.kakaoenterprise.dataload.db;
 
-import io.github.jk6841.kakaoenterprise.song.Song;
+import io.github.jk6841.kakaoenterprise.common.song.Song;
 import io.r2dbc.spi.Statement;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

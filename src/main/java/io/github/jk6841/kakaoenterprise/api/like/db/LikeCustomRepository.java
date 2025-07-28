@@ -1,6 +1,6 @@
-package io.github.jk6841.kakaoenterprise.like.db;
+package io.github.jk6841.kakaoenterprise.api.like.db;
 
-import io.github.jk6841.kakaoenterprise.like.db.dto.LikedSong;
+import io.github.jk6841.kakaoenterprise.api.like.db.dto.LikedSong;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.r2dbc.convert.MappingR2dbcConverter;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;

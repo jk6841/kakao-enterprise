@@ -1,4 +1,4 @@
-package io.github.jk6841.kakaoenterprise.like;
+package io.github.jk6841.kakaoenterprise.api.like;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

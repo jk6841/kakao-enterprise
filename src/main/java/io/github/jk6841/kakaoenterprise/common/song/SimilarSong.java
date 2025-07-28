@@ -1,4 +1,4 @@
-package io.github.jk6841.kakaoenterprise.song;
+package io.github.jk6841.kakaoenterprise.common.song;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
