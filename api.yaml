@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: API Document
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /trending-songs:
+    get:
+      summary: 최근 1시간동안 "좋아요"가 많이 증가한 노래를 확인할 수 있는 API
+      parameters:
+        - in: query
+          name: size
+          description: 최대 몇 개를 리턴할 지
+          required: false
+          schema:
+            type: number
+            default: 10
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  songs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        likes:
+                          type: number
+                          description: 최근 1시간 동안 받은 좋아요 갯수
+                        id:
+                          type: number
+                          description: 노래 ID
+                        title:
+                          type: string
+                          description: 노래 제목
+                        artist:
+                          type: string
+                          description: 아티스트
+                        releaseDate:
+                          type: string
+                          description: 발표일
