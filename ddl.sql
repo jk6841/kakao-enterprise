@@ -19,14 +19,14 @@ create index like_date_time_song_id_index
 create table song
 (
     id                             bigint auto_increment primary key,
-    artist                         text null,
+    artist                         varchar(128) null,
     title                          varchar(256) null,
     text                           mediumtext null,
     length                         varchar(8) null,
     emotion                        varchar(32) null,
     genre                          varchar(64) null,
-    album                          text null,
-    release_date                   varchar(32) null,
+    album                          varchar(255) null,
+    release_date                   varchar(10) null,
     year                           int null,
     song_key                       varchar(8) null,
     tempo double null,
@@ -52,4 +52,9 @@ create table song
     good_for_morning_routine       int null,
     similar_songs                  json null
 );
+
+create index idx_year_arist_album
+    on song (year, artist, album);
+
+
 
