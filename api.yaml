@@ -5,6 +5,44 @@ info:
 servers:
   - url: http://localhost:8080
 paths:
+  /stats/albums/year-artist:
+    get:
+      summary: 연도와 가수별 앨범 수 리턴하는 API
+      parameters:
+        - in: query
+          name: page
+          description: 1-based page number
+          required: false
+          schema:
+            type: number
+            default: 1
+        - in: query
+          name: size
+          description: page size
+          required: false
+          schema:
+            type: number
+            default: 50
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: object
+                    properties:
+                      year:
+                        type: number
+                        description: 연도
+                      artist:
+                        type: string
+                        description: 가수
+                      count:
+                        type: number
+                        description: 앨범 갯수
+
   /trending-songs:
     get:
       summary: 최근 1시간동안 "좋아요"가 많이 증가한 노래를 확인할 수 있는 API
