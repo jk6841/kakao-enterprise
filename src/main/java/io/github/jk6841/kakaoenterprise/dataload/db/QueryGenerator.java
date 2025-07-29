@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Slf4j
@@ -21,7 +22,7 @@ class QueryGenerator {
             insert into song (
                 artist, title, text, 
                 length, emotion, genre, 
-                album, release_date, song_key, 
+                album, release_date, year, song_key, 
                 tempo, loudness_db, time_signature, 
                 explicit, popularity, energy, 
                 danceability, positiveness, speechiness, 
@@ -39,7 +40,8 @@ class QueryGenerator {
                 ?, ?, ?, 
                 ?, ?, ?, 
                 ?, ?, ?, 
-                ?, ?, ?, ?
+                ?, ?, ?, 
+                ?, ?
             )
             """;
     Statement createStatement(List<Song> songs, Connection connection) {
@@ -47,6 +49,8 @@ class QueryGenerator {
         int chunkSize = songs.size();
         for (int i = 0; i < chunkSize; i++) {
             Song song = songs.get(i);
+            String releaseDate = song.getReleaseDate();
+            Integer year = (releaseDate == null)? null : LocalDate.parse(releaseDate).getYear();
             bindParameter(song.getArtist(),0, statement);
             bindParameter(song.getTitle(), 1, statement);
             bindParameter(song.getText(), 2, statement);
@@ -54,30 +58,31 @@ class QueryGenerator {
             bindParameter(song.getEmotion(), 4, statement);
             bindParameter(song.getGenre(),  5, statement);
             bindParameter(song.getAlbum(), 6, statement);
-            bindParameter(song.getReleaseDate(),7, statement);
-            bindParameter(song.getKey(), 8, statement);
-            bindParameter(song.getTempo(),  9, statement);
-            bindParameter(song.getLoudnessDb(), 10, statement);
-            bindParameter(song.getTimeSignature(), 11, statement);
-            bindParameter(song.getExplicit(), 12, statement);
-            bindParameter(song.getPopularity(),13, statement);
-            bindParameter(song.getEnergy(),14, statement);
-            bindParameter(song.getDanceability(), 15, statement);
-            bindParameter(song.getPositiveness(), 16, statement);
-            bindParameter(song.getSpeechiness(), 17, statement);
-            bindParameter(song.getLiveness(), 18, statement);
-            bindParameter(song.getAcousticness(), 19, statement);
-            bindParameter(song.getInstrumentalness(),20, statement);
-            bindParameter(song.getGoodForParty(), 21, statement);
-            bindParameter(song.getGoodForWorkStudy(), 22, statement);
-            bindParameter(song.getGoodForRelaxationMeditation(), 23, statement);
-            bindParameter(song.getGoodForExercise(), 24, statement);
-            bindParameter(song.getGoodForRunning(), 25, statement);
-            bindParameter(song.getGoodForYogaStretching(), 26, statement);
-            bindParameter(song.getGoodForDriving(),  27, statement);
-            bindParameter(song.getGoodForSocialGatherings(),  28, statement);
-            bindParameter(song.getGoodForMorningRoutine(), 29, statement);
-            bindParameter(song.getSimilarSongs(),  30, statement);
+            bindParameter(releaseDate,7, statement);
+            bindParameter(year,8, statement);
+            bindParameter(song.getKey(), 9, statement);
+            bindParameter(song.getTempo(),  10, statement);
+            bindParameter(song.getLoudnessDb(), 11, statement);
+            bindParameter(song.getTimeSignature(), 12, statement);
+            bindParameter(song.getExplicit(), 13, statement);
+            bindParameter(song.getPopularity(),14, statement);
+            bindParameter(song.getEnergy(),15, statement);
+            bindParameter(song.getDanceability(), 16, statement);
+            bindParameter(song.getPositiveness(), 17, statement);
+            bindParameter(song.getSpeechiness(), 18, statement);
+            bindParameter(song.getLiveness(), 19, statement);
+            bindParameter(song.getAcousticness(), 20, statement);
+            bindParameter(song.getInstrumentalness(),21, statement);
+            bindParameter(song.getGoodForParty(), 22, statement);
+            bindParameter(song.getGoodForWorkStudy(), 23, statement);
+            bindParameter(song.getGoodForRelaxationMeditation(), 24, statement);
+            bindParameter(song.getGoodForExercise(), 25, statement);
+            bindParameter(song.getGoodForRunning(), 26, statement);
+            bindParameter(song.getGoodForYogaStretching(), 27, statement);
+            bindParameter(song.getGoodForDriving(),  28, statement);
+            bindParameter(song.getGoodForSocialGatherings(),  29, statement);
+            bindParameter(song.getGoodForMorningRoutine(), 30, statement);
+            bindParameter(song.getSimilarSongs(),  31, statement);
             if (i != chunkSize - 1) {
                 statement.add();
             }

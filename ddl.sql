@@ -27,6 +27,7 @@ create table song
     genre                          varchar(64) null,
     album                          text null,
     release_date                   varchar(32) null,
+    year                           int null,
     song_key                       varchar(8) null,
     tempo double null,
     loudness_db double null,
