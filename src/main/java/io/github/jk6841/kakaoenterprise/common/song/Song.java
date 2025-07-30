@@ -30,7 +30,7 @@ public class Song {
     private Double tempo;
     private Double loudnessDb;
     private String timeSignature;
-    private String explicit;
+    private Boolean explicit;
     private Integer popularity;
     private Integer energy;
     private Integer danceability;

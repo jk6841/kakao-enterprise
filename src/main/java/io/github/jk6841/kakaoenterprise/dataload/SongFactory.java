@@ -25,7 +25,7 @@ public class SongFactory {
                 .tempo(fileLine.tempo())
                 .loudnessDb(fileLine.loudnessDb())
                 .timeSignature(fileLine.timeSignature())
-                .explicit(fileLine.explicit())
+                .explicit(fileLine.explicit().equals("Yes"))
                 .popularity(fileLine.popularity())
                 .energy(fileLine.energy())
                 .danceability(fileLine.danceability())
