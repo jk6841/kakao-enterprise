@@ -10,7 +10,7 @@ create table song
     emotion                        varchar(16) null,
     genre                          varchar(64) null,
     album                          varchar(255) null,
-    release_date                   varchar(10) null,
+    release_date                   char(10) null,
     year                           smallint null,
     song_key                       varchar(6) null,
     tempo double null,
