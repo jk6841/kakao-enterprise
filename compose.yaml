@@ -10,3 +10,5 @@ services:
       - MYSQL_USER=assignment
       - MYSQL_PASSWORD=assignment
       - TZ=Asia/Seoul
+    volumes:
+       - ./ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
