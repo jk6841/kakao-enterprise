@@ -39,14 +39,14 @@ public class Song {
     private Integer liveness;
     private Integer acousticness;
     private Integer instrumentalness;
-    private Integer goodForParty;
-    private Integer goodForWorkStudy;
-    private Integer goodForRelaxationMeditation;
-    private Integer goodForExercise;
-    private Integer goodForRunning;
-    private Integer goodForYogaStretching;
-    private Integer goodForDriving;
-    private Integer goodForSocialGatherings;
-    private Integer goodForMorningRoutine;
+    private Boolean goodForParty;
+    private Boolean goodForWorkStudy;
+    private Boolean goodForRelaxationMeditation;
+    private Boolean goodForExercise;
+    private Boolean goodForRunning;
+    private Boolean goodForYogaStretching;
+    private Boolean goodForDriving;
+    private Boolean goodForSocialGatherings;
+    private Boolean goodForMorningRoutine;
     private List<SimilarSong> similarSongs;
 }
