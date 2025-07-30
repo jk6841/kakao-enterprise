@@ -1,20 +1,4 @@
-create table llike
-(
-    id        bigint auto_increment
-        primary key,
-    song_id   bigint   null,
-    date_time datetime null,
-    user_id   bigint   null,
-    constraint like_song_id_user_id_uindex
-        unique (song_id, user_id),
-    constraint llike_song_id_fk
-        foreign key (song_id) references song (id)
-);
-
-create index like_date_time_song_id_index
-    on llike (date_time, song_id);
-
-
+use assignment;
 
 create table song
 (
@@ -56,5 +40,18 @@ create table song
 create index idx_year_arist_album
     on song (year, artist, album);
 
+create table llike
+(
+    id        bigint auto_increment
+        primary key,
+    song_id   bigint   null,
+    date_time datetime null,
+    user_id   bigint   null,
+    constraint like_song_id_user_id_uindex
+        unique (song_id, user_id),
+    constraint llike_song_id_fk
+        foreign key (song_id) references song (id)
+);
 
-
+create index like_date_time_song_id_index
+    on llike (date_time, song_id);
