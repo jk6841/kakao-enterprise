@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.run.BootRun
+
 plugins {
     java
     id("org.springframework.boot") version "3.5.4"
@@ -38,4 +40,16 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.register<BootRun>("api-app") {
+    mainClass.set("io.github.jk6841.kakaoenterprise.ApiApplication")
+    classpath = sourceSets["main"].runtimeClasspath
+    description = "run api application"
+}
+
+tasks.register<BootRun>("dataload-app") {
+    mainClass.set("io.github.jk6841.kakaoenterprise.DataLoadApplication")
+    classpath = sourceSets["main"].runtimeClasspath
+    description = "run dataload application"
 }
