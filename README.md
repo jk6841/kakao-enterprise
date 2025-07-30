@@ -1,4 +1,5 @@
 # README
+- https://github.com/jk6841/kakao-enterprise
 
 ## 시스템 구조
 ```mermaid
