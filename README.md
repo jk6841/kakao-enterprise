@@ -61,3 +61,22 @@ graph TD
 - ```shell
   gradle api-app
   ```
+
+## 세부 설명
+### 데이터 구조
+- table `song`
+  - 동일 노래에 속한 artist 별로 분리했습니다.
+    - 이유
+      - 파일의 artist는 comma-separated로 여러 명의 가수가 포함됨
+      - artist가 길면 index 불가능
+    - `최종적으로는 정규화 필요하지만, 일단 데이터 중복이 있게 구현했습니다.`
+- table `llike`
+  - user 별로 중복 좋아요를 막기 위해 (user, song)을 unique하게 설정합니다.
+
+### DataLoad Application 동작 방식
+- 파일에서 json line 1줄씩 읽기
+- object로 역직렬화
+- 여러 row를 모아서 batch insert
+  - 한 object(파일 기준 line)별로 insert하면 insert query가 너무 많습니다.
+  - batch size는 application property로 설정하여 인프라, DB 상황에 따라 튜닝할 수 있게 구현했습니다.
+    - `app.dataload.batch.size`
