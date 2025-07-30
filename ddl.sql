@@ -16,7 +16,7 @@ create table song
     tempo double null,
     loudness_db double null,
     time_signature                 char(3) null,
-    explicit                       varchar(3) null,
+    explicit                       tinyint null,
     popularity                     tinyint null,
     energy                         tinyint null,
     danceability                   tinyint null,

@@ -106,6 +106,10 @@ class QueryGenerator {
         bindParameter(value, Integer.class, index, statement);
     }
 
+    private void bindParameter(Boolean value, int index, Statement statement) {
+        bindParameter(value, Boolean.class, index, statement);
+    }
+
     private void bindParameter(Object value, int index, Statement statement) {
         try {
             String valueString = objectMapper.writeValueAsString(value);
